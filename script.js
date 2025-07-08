@@ -109,9 +109,9 @@ currencySelect.addEventListener("change", () => {
       <p><strong>Client:</strong> ${client}</p>
       <p><strong>Work:</strong> ${desc}</p>
       <p><strong>Hours:</strong> ${hours} @ ₹${rate}/hr</p>
-      <p><strong>Subtotal:</strong> ₹${base.toFixed(2)}</p>
-      <p><strong>Tax:</strong> ₹${tax.toFixed(2)}</p>
-      <p><strong>Total:</strong> ₹${total.toFixed(2)}</p>
+      <p><strong>Subtotal:</strong> ${symbols[currentCurrency]}</p>
+      <p><strong>Tax:</strong> ${symbols[currentCurrency]}</p>
+      <p><strong>Total:</strong> ${symbols[currentCurrency]}</p>
       <p style="margin-top: 20px; font-size: 12px;">Made with ❤️ in Freelancer Helper</p>
     `;
 
