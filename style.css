@@ -1,0 +1,219 @@
+/* Base Layout */
+body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+/* Container Card */
+.container {
+  width: 100%;
+  max-width: 420px;
+  background: white;
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* Headings */
+h1 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+  letter-spacing: 1px;
+  background: linear-gradient(to right, #2563eb, #4ade80);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Input Fields */
+form input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  font-size: 16px;
+}
+
+/* Buttons */
+button {
+  width: 100%;
+  padding: 14px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 14px;
+  margin-top: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #2563eb;
+}
+
+/* Invoice Card Output */
+.invoice-card {
+  background: #fefefe;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Top Navigation Bar */
+.topbar {
+  background-color: #3b82f6;
+  color: white;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.app-title {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.menu-wrapper {
+  position: relative;
+}
+
+#menuButton {
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Dropdown Menu */
+.dropdown {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background: white;
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  z-index: 999;
+}
+
+.dropdown-item {
+  padding: 12px 16px;
+  cursor: pointer;
+  font-size: 15px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.dropdown-item:hover {
+  background: #f1f5f9;
+}
+
+/* Saved Invoices List */
+.invoice-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.invoice-list li {
+  background: #f1f5f9;
+  margin: 10px 0;
+  padding: 14px;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  font-size: 14px;
+}
+
+/* Tabs for Section Visibility */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Hidden Class */
+.hidden {
+  display: none;
+}
+select, input {
+  font-family: 'Quicksand', sans-serif;
+  appearance: none;
+  background-color: #f9fafb;
+  background-image: linear-gradient(45deg, transparent 50%, #3b82f6 50%), linear-gradient(135deg, #3b82f6 50%, transparent 50%);
+  background-position: calc(100% - 20px) center, calc(100% - 15px) center;
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+}
+
+.invoice-card {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+button:hover {
+  transform: scale(1.03);
+}
+/* 🌙 Dark Mode Styles */
+body.dark-mode {
+  background: #121212;
+  color: #f5f5f5;
+}
+
+.container.dark-mode {
+  background: #1e1e1e;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
+}
+
+.topbar.dark-mode {
+  background-color: #1f2937;
+  color: #f5f5f5;
+}
+
+.dropdown.dark-mode {
+  background: #2d2d2d;
+  color: #f5f5f5;
+}
+
+.dropdown.dark-mode .dropdown-item:hover {
+  background: #3a3a3a;
+}
+
+input.dark-mode,
+button.dark-mode,
+textarea.dark-mode {
+  background-color: #2a2a2a;
+  color: #f5f5f5;
+  border: 1px solid #555;
+}
+
+.invoice-card.dark-mode {
+  background-color: #1e1e1e;
+  color: #f5f5f5;
+}
+
+.invoice-list li.dark-mode {
+  background: #2d2d2d;
+  color: #f5f5f5;
+}
