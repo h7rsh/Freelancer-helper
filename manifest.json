@@ -1,17 +1,15 @@
 {
   "name": "Freelancer Helper",
-  "short_name": "FH",
-  "description": "Freelancer Helper is a lightweight tool to generate, save, and export invoices quickly — perfect for freelancers and solo professionals.",
-  "start_url": "index.html",
+  "short_name": "FH App",
+  "description": "Create and manage client invoices easily with Freelancer Helper.",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#4a90e2",
+  "theme_color": "#4CAF50",
   "orientation": "portrait",
-  "scope": "./",
-  "lang": "en",
   "icons": [
     {
-      "src": "icon-512.png",
+      "src": "icon.png",
       "sizes": "512x512",
       "type": "image/png"
     }
@@ -19,17 +17,16 @@
   "screenshots": [
     {
       "src": "screenshot1.png",
-      "sizes": "800x600",
-      "type": "image/png"
+      "type": "image/png",
+      "sizes": "1280x720",
+      "label": "Home screen showing invoice form"
     },
     {
       "src": "screenshot2.png",
-      "sizes": "800x600",
-      "type": "image/png"
+      "type": "image/png",
+      "sizes": "1280x720",
+      "label": "Saved invoices list in dark mode"
     }
   ],
-  "categories": ["productivity", "business", "finance"],
-  "dir": "ltr",
-  "iarc_rating_id": "e",
-  "prefer_related_applications": false
+  "lang": "en"
 }
