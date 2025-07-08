@@ -149,10 +149,10 @@ currencySelect.addEventListener("change", () => {
       doc.text(`Date: ${today}`, 15, y); y += 8;
       doc.text(`Client: ${client}`, 15, y); y += 8;
       doc.text(`Work: ${desc}`, 15, y); y += 8;
-      doc.text(`Hours: ${hours} @ ${symbols[currentCurrency]}${rate}/hr`, 15, y); y += 8;
-      doc.text(`Subtotal: ₹${base.toFixed(2)}`, 15, y); y += 8;
-      doc.text(`Tax: ₹${tax.toFixed(2)}`, 15, y); y += 8;
-      doc.text(`Total: ₹${total.toFixed(2)}`, 15, y); y += 12;
+      doc.text(`Hours: ${hours} @ ${symbols[currentCurrency]} ${rate}/hr`, 15, y); y += 8;
+      doc.text(`Subtotal: ${symbols[currentCurrency]} ${base.toFixed(2)}`, 15, y); y += 8;
+      doc.text(`Tax: ${symbols[currentCurrency]}${tax.toFixed(2)}`, 15, y); y += 8;
+      doc.text(`Total: ${symbols[currentCurrency]} ${total.toFixed(2)}`, 15, y); y += 12;
       doc.setFontSize(10);
       doc.text("Made with ❤️ in Freelancer Helper", 15, y);
       doc.save(`invoice_${invoiceId}.pdf`);
