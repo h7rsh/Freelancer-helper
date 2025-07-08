@@ -1,15 +1,29 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Freelancer Helper</title>
+
+  <!-- Styles & Fonts -->
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+
+  <!-- JS Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <!-- PWA Manifest -->
   <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#4CAF50">
+  <meta name="theme-color" content="#4CAF50" />
+
+  <!-- iOS Support -->
+  <link rel="apple-touch-icon" href="icon.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-title" content="Freelancer Helper" />
 </head>
+
 <body>
   <header class="topbar">
     <div class="app-title">Freelancer Helper</div>
@@ -23,7 +37,9 @@
         <div data-action="darkmode" class="dropdown-item">🌓 Toggle Dark Mode</div>
       </div>
     </div>
-  </header>  <div id="create" class="tab-content active">
+  </header>
+
+  <div id="create" class="tab-content active">
     <div class="container">
       <h1>Create Invoice</h1>
       <form id="invoiceForm">
@@ -31,25 +47,59 @@
         <input type="text" placeholder="Client Name" id="client" required>
         <input type="text" placeholder="Work Description" id="desc" required>
         <select id="currency">
-  <option value="INR" selected>₹ INR</option>
-  <option value="USD">$ USD</option>
-  <option value="EUR">€ EUR</option>
-  <option value="GBP">£ GBP</option>
+          <option value="INR" selected>₹ INR</option>
+          <option value="USD">$ USD</option>
+          <option value="EUR">€ EUR</option>
+          <option value="GBP">£ GBP</option>
         </select>
         <input type="number" placeholder="Hourly Rate (₹)" id="rate" required>
         <input type="number" placeholder="Hours Worked" id="hours" required>
         <input type="number" placeholder="Tax (%)" id="tax" required>
         <button type="submit">Generate Invoice</button>
-      </form><div id="output" class="invoice-card hidden"></div>
-  <button id="downloadBtn" class="hidden">📥 Download Invoice</button>
-  <button id="pdfBtn" class="hidden">📄 Export as PDF</button>
-</div>
+      </form>
 
-  </div>  <div id="view" class="tab-content">
+      <div id="output" class="invoice-card hidden"></div>
+      <button id="downloadBtn" class="hidden">📥 Download Invoice</button>
+      <button id="pdfBtn" class="hidden">📄 Export as PDF</button>
+    </div>
+  </div>
+
+  <div id="view" class="tab-content">
     <div class="container">
       <h1>Saved Invoices</h1>
       <input type="text" id="searchInput" placeholder="Search by client name..." class="search-box">
       <ul id="invoiceList" class="invoice-list"></ul>
     </div>
-  </div>  <script src="script.js"></script></body>
-</html>
+  </div>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+
+  <!-- Register Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(reg => console.log('✅ Service Worker registered!', reg))
+        .catch(err => console.error('❌ Service Worker registration failed:', err));
+    }
+  </script>
+
+  <!-- Currency Symbol Sync (Optional) -->
+  <script>
+    const currencySelect = document.getElementById("currency");
+    const rateInput = document.getElementById("rate");
+
+    const symbols = {
+      INR: "₹",
+      USD: "$",
+      EUR: "€",
+      GBP: "£"
+    };
+
+    currencySelect.addEventListener("change", () => {
+      const symbol = symbols[currencySelect.value];
+      rateInput.placeholder = `Hourly Rate (${symbol})`;
+    });
+  </script>
+</body>
+  </html>
