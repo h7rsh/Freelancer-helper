@@ -1,17 +1,19 @@
 {
   "name": "Freelancer Helper",
   "short_name": "FH App",
-  "description": "Create and manage client invoices easily with Freelancer Helper.",
-  "start_url": "./index.html",
+  "description": "An intuitive tool for freelancers to create and manage invoices with ease.",
+  "start_url": ".",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#4CAF50",
   "orientation": "portrait",
+  "lang": "en",
   "icons": [
     {
       "src": "icon.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
   "screenshots": [
@@ -19,14 +21,13 @@
       "src": "screenshot1.png",
       "type": "image/png",
       "sizes": "1280x720",
-      "label": "Home screen showing invoice form"
+      "label": "Invoice generation form"
     },
     {
       "src": "screenshot2.png",
       "type": "image/png",
       "sizes": "1280x720",
-      "label": "Saved invoices list in dark mode"
+      "label": "Saved invoice list"
     }
-  ],
-  "lang": "en"
+  ]
 }
