@@ -1,17 +1,35 @@
 {
   "name": "Freelancer Helper",
   "short_name": "FH",
+  "description": "Freelancer Helper is a lightweight tool to generate, save, and export invoices quickly — perfect for freelancers and solo professionals.",
   "start_url": "index.html",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#4f46e5",
+  "theme_color": "#4a90e2",
   "orientation": "portrait",
+  "scope": "./",
+  "lang": "en",
   "icons": [
     {
-      "src": "icon.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ],
-  "splash_pages": null
+  "screenshots": [
+    {
+      "src": "screenshot1.png",
+      "sizes": "800x600",
+      "type": "image/png"
+    },
+    {
+      "src": "screenshot2.png",
+      "sizes": "800x600",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["productivity", "business", "finance"],
+  "dir": "ltr",
+  "iarc_rating_id": "e",
+  "prefer_related_applications": false
 }
