@@ -5,6 +5,21 @@ document.addEventListener("DOMContentLoaded", function () {
   const downloadBtn = document.getElementById("downloadBtn");
   const pdfBtn = document.getElementById("pdfBtn");
   const card = document.getElementById("output");
+  const currencySelect = document.getElementById("currency");
+let currentCurrency = localStorage.getItem("currency") || "INR";
+currencySelect.value = currentCurrency;
+
+const symbols = {
+  INR: "₹",
+  USD: "$",
+  EUR: "€",
+  GBP: "£"
+};
+
+currencySelect.addEventListener("change", () => {
+  currentCurrency = currencySelect.value;
+  localStorage.setItem("currency", currentCurrency);
+});
 
   // 🌐 Dropdown toggle
   menuBtn.addEventListener("click", () => {
